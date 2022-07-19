@@ -10,20 +10,20 @@ describe('Show password icon functionality', () => {
   it('Show password icon',()=>{
 
      cy.get('svg[id=Capa_1]')
-     .eq(0)
-     .click()
+       .eq(0)
+       .click()
 
      cy.get('svg[id=Capa_1]')
-     .eq(1)
-     .click()
+       .eq(1)
+       .click()
 
      cy.get('input[id=password]')
-     .type('Test1234$')
-     .should('have.class','sc-crzoAE ezHBjF')
+       .type('Test1234$')
+       .should('have.class','sc-crzoAE ezHBjF')
      
      cy.get('input[id=confirm-password]')
-     .type('Test1234$')
-     .should('have.class','sc-crzoAE ezHBjF')
+       .type('Test1234$')
+       .should('have.class','sc-crzoAE ezHBjF')
   }
   
   )
