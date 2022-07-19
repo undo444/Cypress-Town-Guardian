@@ -8,10 +8,21 @@ describe('Verify Login functionality', () => {
 
   
   it('LogIn with valid data',()=>{
-     cy.get('input[id=email-address]').should('be.visible').type('manolache.alexandru94@gmail.com')
-     cy.get('input[id=password]').type('NRQN3GGI').should('be.visible')
-     cy.get('button').contains('Login').should('be.visible').click()
-     c.url().should('include','dashboard')
+     cy.get('input[id=email-address]')
+       .should('be.visible')
+       .type('manolache.alexandru94@gmail.com')
+
+     cy.get('input[id=password]')
+       .type('NRQN3GGI')
+       .should('be.visible')
+
+     cy.get('button')
+       .contains('Login')
+       .should('be.visible')
+       .click()
+       
+     cy.url()
+       .should('include','dashboard')
      
   }
   
