@@ -11,7 +11,8 @@ describe('Verify Login functionality', () => {
      cy.get('input[id=email-address]').should('be.visible').type('manolache.alexandru94@gmail.com')
      cy.get('input[id=password]').type('NRQN3GGI').should('be.visible')
      cy.get('button').contains('Login').should('be.visible').click()
-     cy.url().should('include','dashboard')
+     c.url().should('include','dashboard')
+     
   }
   
   )
