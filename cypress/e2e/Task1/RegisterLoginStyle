@@ -20,7 +20,8 @@ describe('Verify Login functionality for all users type', () => {
       .contains('text','Login to')
       .should('be.visible')
 
-    
+    cy.url
+      .should ('include','/#/login')
   })
 
 
