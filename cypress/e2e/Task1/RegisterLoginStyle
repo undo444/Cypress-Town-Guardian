@@ -17,8 +17,7 @@ describe('Verify Register/Login style form', () => {
       .contains('text','Login to')
       .should('be.visible')
 
-    cy.url
-      .should ('include','/#/login')
+    
   })
 
 
