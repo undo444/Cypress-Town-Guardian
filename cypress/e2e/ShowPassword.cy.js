@@ -12,6 +12,7 @@ describe('Show password icon functionality', () => {
      cy.get('svg[id=Capa_1]')
        .eq(0)
        .click()
+       
 
      cy.get('svg[id=Capa_1]')
        .eq(1)

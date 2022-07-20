@@ -30,13 +30,18 @@ describe('Verify Register Functionality', () => {
       .type('Test1234$')
       .should('have.class','sc-crzoAE ezHBjF')
 
-    cy.get('input[id=personal-number')
-      .type('1950313015829')
+    cy.get('input[id=personal-number]')
+      .type('1960413016400')
       .should('be.visible')
       
     cy.get('button')
       .contains('Register')
-      .should('have.class','sc-iqAclL peduE')
+      .click()
+      .should('have.text','Register')
+
+    cy.get('h1')  
+      .contains('Login to')
+      .should('have.text','Login to')
     
   }
   
