@@ -25,7 +25,7 @@ describe('Verify Login functionality for all users type', () => {
        .click() 
        
      cy.get('div')
-       .should('have.class','sc-gtsrHT gfuSqG')
+       .should('be.visible')
    })
 
 

@@ -7,28 +7,29 @@ describe('Show password icon functionality', () => {
   })
 
   
-  it('Show password icon',()=>{
+  class EmailGenerator {
 
-     cy.get('svg[id=Capa_1]')
-       .eq(0)
-       .click()
-       
-
-     cy.get('svg[id=Capa_1]')
-       .eq(1)
-       .click()
-
-     cy.get('input[id=password]')
-       .type('Test1234$')
-       .should('have.class','sc-crzoAE ezHBjF')
-     
-     cy.get('input[id=confirm-password]')
-       .type('Test1234$')
-       .should('have.class','sc-crzoAE ezHBjF')
+    static id = 1;
+    static generate(baseEmail) {
+      const uniqueId = `+a${this.id++}`;  
+      return baseEmail.replace('@', `${uniqueId}@`); 
+    }
   }
   
-  )
-
-
-
+  Cypress.Commands.add('generateEmail', (baseEmail) => {
+    return EmailGenerator.generate(baseEmail)
+  })
+  
+  it('generates a unique email', () => {
+    console.log(EmailGenerator.generate('test@gmail.com'))    // test+a1@gmail.com
+  })
+  
+  it('generates a second unique email', () => {
+    console.log(EmailGenerator.generate('test@gmail.com'))    // test+a2@gmail.com
+  })
+  
+  it('generates a third unique email via a custom command (across all specs)', () => {
+    cy.generateEmail('test@gmail.com')
+      .then(email => console.log(email));                     // test+a3@gmail.com
+  })
 })
