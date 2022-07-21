@@ -11,13 +11,16 @@ describe('Verify Login LoginPageStyle', () => {
     cy.get('button')
        .contains('Login')
        .should('be.visible')
-
+       .should('have.css','background-color')
+       .and('eq', 'rgb(11, 37, 89)')
+       
     cy.get('a')  
       .contains('Reset') 
       .should('be.visible')
+      .should('have.css','font-weight')
+      .and('eq', '600')
 
-    cy.url()
-      .should('include','/#/login')
+    
 
     
   })
