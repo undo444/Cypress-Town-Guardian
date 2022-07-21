@@ -1,3 +1,5 @@
+
+
 describe('Verify Login functionality for all users type', () => {
     beforeEach(() => {
       
@@ -18,10 +20,10 @@ describe('Verify Login functionality for all users type', () => {
          .should('be.visible')
          .click() 
 
-       
          
-
+         
     })
-  
-    
-})
+   
+    })
+
+

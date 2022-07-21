@@ -1,13 +1,13 @@
 /// <reference types="cypress" />
 
-describe('Verify Login functionality for all users type', () => {
+describe('Verify Login LoginPageStyle', () => {
   beforeEach(() => {
     
     cy.visit('https://victorious-wave-093b83610.1.azurestaticapps.net/#/login')
   })
 
 
-  it('LogIn with valid data for "Admin" user',()=>{
+  it('Login page style',()=>{
     cy.get('button')
        .contains('Login')
        .should('be.visible')
@@ -16,13 +16,10 @@ describe('Verify Login functionality for all users type', () => {
       .contains('Reset') 
       .should('be.visible')
 
-    cy.get('.sc-kmIPcE htFMXJ')  
-      .contains('text','Login to')
-      .should('be.visible')
+    cy.url()
+      .should('include','/#/login')
 
-    cy.url
-      .should ('include','/#/login')
+    
   })
-
-
+  
 })
