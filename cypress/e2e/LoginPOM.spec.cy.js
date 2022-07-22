@@ -16,7 +16,7 @@ describe('Cypress POM Test suite',function()  {
 
  it('LogIn with valid data for "Admin" user and access',function(){ 
   
-//   cy.fixture('example').as('examplejson')  
+ 
 
   loginpage.navigate();
   loginpage.Email.type(example.email);
