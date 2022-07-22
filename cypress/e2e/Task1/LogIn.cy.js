@@ -7,7 +7,7 @@ describe('Verify Login functionality for all users type', () => {
   })
 
   
-  it.only('LogIn with valid data for "Admin" user and access',()=>{
+  it('LogIn with valid data for "Admin" user and access',()=>{
      cy.get('input[id=email-address]')
        .should('be.visible')
        .type('manolache.alexandru94@gmail.com')
