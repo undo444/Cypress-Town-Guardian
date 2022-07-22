@@ -1,12 +1,27 @@
-import Login from "./PageObject/one";
+import Login from "./PageObject/login";
+
+
+const loginpage=new Login();
+let example;
+
 describe('Cypress POM Test suite',function()  {
+     
+    before(() => {
+    
+        cy.fixture('example.json').then((data) => {
+           
+            example=data;
+          })
+      })
+
+ it('LogIn with valid data for "Admin" user and access',function(){ 
   
-it('LogIn with valid data for "Admin" user and access',function(){ 
- const loginpage = new Login(); 
- loginpage.navigate();
- loginpage.email('alex@yahoo.com');
- loginpage.password('Test1234');
- loginpage.submit();
+//   cy.fixture('example').as('examplejson')  
+
+  loginpage.navigate();
+  loginpage.Email.type(example.email);
+  loginpage.password.type(example.password);
+  loginpage.submit.click();
 
  cy.url().should('be.equal','https://victorious-wave-093b83610.1.azurestaticapps.net/#/login')
 })
