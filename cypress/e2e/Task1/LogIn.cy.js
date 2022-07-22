@@ -7,7 +7,7 @@ describe('Verify Login functionality for all users type', () => {
   })
 
   
-  it('LogIn with valid data for "Admin" user',()=>{
+  it.only('LogIn with valid data for "Admin" user and access',()=>{
      cy.get('input[id=email-address]')
        .should('be.visible')
        .type('manolache.alexandru94@gmail.com')
@@ -24,8 +24,9 @@ describe('Verify Login functionality for all users type', () => {
        .should('be.visible')
        .click() 
        
-     cy.get('div')
-       .should('be.visible')
+     cy.url()
+       .should('contain','/dashboard')
+    
    })
 
 
@@ -46,8 +47,8 @@ describe('Verify Login functionality for all users type', () => {
       .should('be.visible')
       .click()
       
-      cy.get('div')
-      .should('have.class','sc-gtsrHT gfuSqG')
+      cy.url()
+        .should('contain','/dashboard')
     })
 
     it('LogIn with valid data for "Agent" user',()=>{
@@ -67,8 +68,8 @@ describe('Verify Login functionality for all users type', () => {
         .should('be.visible')
         .click()
         
-        cy.get('div')
-        .should('have.class','sc-gtsrHT gfuSqG')
+      cy.url()
+        .should('contain','/dashboard')
     }) 
 
     it('LogIn with valid data for "Citizen" user',()=>{
@@ -88,6 +89,9 @@ describe('Verify Login functionality for all users type', () => {
         .should('be.visible')
         .click()
     
+      cy.url()
+        .should('contain','/dashboard')
+
     })
 
    it('Show Password icon',()=>{
@@ -100,5 +104,7 @@ describe('Verify Login functionality for all users type', () => {
         .click()       
 
    })
+   
+   
 
 })
