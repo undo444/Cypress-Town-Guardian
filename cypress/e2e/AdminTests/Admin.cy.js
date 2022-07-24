@@ -1,17 +1,5 @@
 /// <reference types="cypress" />
 
-function firstname () {
-
-  var char = 'abcdefghijklmnopqrstuvwxyz';
-    var str = '';
-    for(var ii=0; ii<15 ; ii++){
-    str += char[Math.floor(Math.random() * char.length)];}
-    var randomfirstname = str
-    return str
-
-}
-
-
 describe('Tests suite for Admin user type', () => {
   beforeEach(() => {
     
