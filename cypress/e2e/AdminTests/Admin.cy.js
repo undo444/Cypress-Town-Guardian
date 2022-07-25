@@ -187,9 +187,12 @@ describe('Tests suite for Admin user type', () => {
     cy.get('a[label=Users')
       .click() 
 
-    cy.get('svg[cursor=pointer')  
-      .eq(0)
-      .click()  
+    cy.get('td') 
+      .should('have.class','sc-kLojOw iehvjW')
+      .contains('New')
+      .should('be.visible')  
+
+    
 
   })
 
